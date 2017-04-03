@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Guess the color</title>
+  <style>
+    #colorReturned{
+  width: 200px;
+  height: 200px;
+  display: none;
+}
+  </style>
+</head>
+<body>
+ Guess a Color:<select id ="myColorGuess">
+  <option value="1">Red</option>
+  <option value="2">Orange</option>    
+  <option value="3">Yellow</option></select>
+  <br/><br/>
+  
+  <button id="runTest">Guess the color!</button>
+
+  <div id="colorReturned">
+	
+</div>
+  
+ <script>  
+var myColor = parseInt(document.getElementById("myColorGuess").value);
+//!777777777777777777777777777777777777777777777777777777777777777777777777777777777777
+//!test!to!see!if!the!button!has!been!clicked!then!run!the!code!for!the!guessing!game
+//!777777777777777777777777777777777777777777777777777777777777777777777777777777777777
+document.getElementById("runTest").onclick = function() {
+  
+myColor = parseInt(document.getElementById("myColorGuess").value);
+//!store!the!random!number!between!1!and!3!
+//!red!=!1!
+//!orange!=!2!
+//!yellow!=!3
+  var theCorrectColor //color name matched with number
+var theColor = (Math.floor(Math.random() *3) +1);
+  //testalert("The user picked "+myColor);   
+//testalert("The computer picked "+theColor);
+document.getElementById("colorReturned").style.display="block";
+  
+ document.getElementById("colorReturned").style.backgroundColor="red";
+  if(theColor==1){//test for red
+    theCorrectColor ="Red";
+     //computer picked red
+    if (theColor==myColor){
+     
+      alert("You're Correct! The color was "+theCorrectColor);
+    }
+    else{
+      alert("Sorry, you're wrong! The correct color was "+theCorrectColor); 
+    }
+  } 
+  else if(theColor==2){ //test for orange
+    theCorrectColor ="Orange";
+    //the computer picked orange
+  document.getElementById("colorReturned").style.display="block";
+  
+ document.getElementById("colorReturned").style.backgroundColor="orange";
+    if (theColor==myColor){
+      
+      alert("You're Correct! The color was "+theCorrectColor);
+    }
+    else{                           
+      alert("Sorry, you're wrong! The correct color was "+theCorrectColor); 
+    }
+  }
+    else{  //test for yellow 
+      theCorrectColor ="Yellow";
+      //the computer picked yellow
+      
+      document.getElementById("colorReturned").style.display="block";
+  
+ document.getElementById("colorReturned").style.backgroundColor="yellow";
+      if (theColor==myColor){
+      
+      alert("You're Correct! The color was "+theCorrectColor);
+    }
+    else{                           
+      alert("Sorry, you're wrong!The correct color was "+theCorrectColor); 
+    }
+    }
+};
+  </script>
+
+
+</body>
+</html>
